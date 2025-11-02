@@ -111,6 +111,12 @@ body {
     font-weight: 700;
     color: var(--color-primary);
     text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.nav-logo:hover {
+    opacity: 0.8;
 }
 
 .logo-icon {
@@ -224,6 +230,7 @@ body {
     font-size: 3.5rem;
     font-weight: 800;
     line-height: 1.2;
+    margin-top: 5px;
     margin-bottom: var(--spacing-lg);
     color: var(--color-primary);
 }
@@ -789,6 +796,139 @@ section {
     color: var(--color-primary);
 }
 
+/* === Feature Request Page === */
+.hero-feature-request {
+    min-height: auto;
+    padding-top: 120px;
+    padding-bottom: var(--spacing-2xl);
+}
+
+.feature-request-section {
+    background: var(--color-bg);
+    padding: var(--spacing-3xl) 0;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.feature-form {
+    background: var(--color-bg-alt);
+    padding: var(--spacing-2xl);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--color-border);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: var(--spacing-md);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(0, 179, 255, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.feature-form .btn {
+    width: 100%;
+    margin-top: var(--spacing-md);
+}
+
+.form-info {
+    background: var(--color-bg-alt);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
+    margin-top: var(--spacing-2xl);
+    border: 1px solid var(--color-border);
+    text-align: center;
+}
+
+.form-info p {
+    color: var(--color-text-light);
+    margin: var(--spacing-sm) 0;
+    line-height: 1.6;
+}
+
+.form-info a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+}
+
+.form-info a:hover {
+    opacity: 0.8;
+}
+
+/* === Community Stats === */
+.community-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-3xl);
+    margin-top: -2rem;
+}
+
+.stat-card {
+    background: var(--color-bg-alt);
+    padding: var(--spacing-2xl) var(--spacing-xl);
+    border-radius: var(--border-radius);
+    text-align: center;
+    border: 1px solid var(--color-border);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-accent);
+    box-shadow: 0 8px 16px rgba(0, 179, 255, 0.15);
+}
+
+.stat-amount {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-md);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-text-light);
+    letter-spacing: 0.1em;
+    margin: 0;
+    text-transform: uppercase;
+}
+
 /* === Donation Page === */
 .hero-donate {
     min-height: auto;
@@ -1000,6 +1140,29 @@ section {
         min-width: 100%;
     }
 
+    /* Community Stats */
+    .community-stats {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: var(--spacing-lg);
+    }
+
+    .stat-amount {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.7rem;
+    }
+
+    /* Feature Request Form */
+    .feature-form {
+        padding: var(--spacing-lg);
+    }
+
+    .form-group textarea {
+        min-height: 120px;
+    }
+
     /* Footer */
     .footer-content {
         grid-template-columns: 1fr;
@@ -1029,5 +1192,15 @@ section {
     .planet-icon {
         width: 100px;
         height: 100px;
+    }
+
+    /* Community Stats */
+    .community-stats {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .stat-amount {
+        font-size: 1.75rem;
     }
 }

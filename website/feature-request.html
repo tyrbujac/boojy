@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Request a feature for Boojy Suite. Share your ideas and help shape the future of creative tools.">
+    <title>Request a Feature – Boojy</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">✨</span>
+                <span class="logo-text">Boojy</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li class="nav-group nav-products">
+                    <a href="index.html#audio">Audio</a>
+                    <a href="index.html#cloud">Cloud</a>
+                    <a href="index.html#design">Design</a>
+                    <a href="index.html#draw">Draw</a>
+                </li>
+                <li class="nav-separator">·</li>
+                <li class="nav-group nav-info">
+                    <a href="index.html#roadmap">Roadmap</a>
+                    <a href="https://github.com/tsbujacncl/boojy" target="_blank">GitHub</a>
+                </li>
+                <li class="nav-separator">·</li>
+                <li class="nav-group nav-ctas">
+                    <a href="index.html#notify" class="btn btn-nav-primary">Get Notified</a>
+                    <a href="donate.html" class="btn btn-nav-secondary">Donate</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero hero-feature-request">
+        <div class="container hero-content">
+            <h1 class="hero-title">Request a Feature</h1>
+            <p class="hero-subtitle">
+                Have an idea for Boojy? Share it with us. Your feedback helps shape the future of creative tools.
+            </p>
+        </div>
+    </section>
+
+    <!-- Feature Request Form -->
+    <section class="feature-request-section">
+        <div class="container">
+            <div class="form-container">
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="feature-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="feature">Feature Request</label>
+                        <textarea id="feature" name="message" required placeholder="Tell us about the feature you'd like to see..." rows="6"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit Feature Request</button>
+                </form>
+
+                <div class="form-info">
+                    <p><strong>Not sure how to submit?</strong></p>
+                    <p>You can also submit feature requests directly on our <a href="https://github.com/tsbujacncl/boojy" target="_blank">GitHub repository</a> or reach out to us via email.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-links">
+                <a href="index.html">Home</a> ·
+                <a href="https://github.com/tsbujacncl/boojy" target="_blank">GitHub</a> ·
+                <a href="feature-request.html">Request a Feature</a> ·
+                <a href="donate.html">Donate</a> ·
+                © Boojy.org — Created by Tyr
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
