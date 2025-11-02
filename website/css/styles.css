@@ -363,7 +363,7 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: var(--spacing-xl);
-    margin-top: var(--spacing-2xl);
+    margin-top: var(--spacing-xl);
 }
 
 .app-card {
