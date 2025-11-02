@@ -562,82 +562,121 @@ section {
     background: var(--color-bg-alt);
 }
 
-.roadmap-timeline {
-    max-width: 800px;
-    margin: var(--spacing-2xl) auto 0;
-    position: relative;
+.roadmap-grid {
+    margin-top: var(--spacing-2xl);
 }
 
-.roadmap-timeline::before {
-    content: '';
-    position: absolute;
-    left: 20px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--color-border);
-}
-
-.timeline-item {
-    position: relative;
-    padding-left: 60px;
+.roadmap-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
     margin-bottom: var(--spacing-2xl);
+    flex-wrap: wrap;
 }
 
-.timeline-marker {
-    position: absolute;
-    left: 11px;
-    top: 0;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--color-bg);
-    border: 3px solid var(--color-border);
-    transition: all 0.3s ease;
-}
-
-.timeline-marker.active {
-    border-color: var(--color-accent);
-    background: var(--color-accent);
-    box-shadow: 0 0 0 4px rgba(0, 179, 255, 0.2);
-}
-
-.timeline-content {
+.roadmap-card {
     background: var(--color-bg);
     padding: var(--spacing-lg);
     border-radius: var(--border-radius);
+    text-align: center;
+    min-width: 150px;
+    flex: 1;
+    max-width: 180px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
-.timeline-content h3 {
-    font-size: 1.25rem;
+.roadmap-card.active {
+    background: var(--color-accent);
+    color: white;
+}
+
+.roadmap-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-accent);
+}
+
+.roadmap-marker {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-accent);
+}
+
+.roadmap-card.active .roadmap-marker {
+    color: white;
+}
+
+.roadmap-card h3 {
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--color-primary);
-    margin-bottom: var(--spacing-xs);
+    margin: 0.5rem 0;
 }
 
-.timeline-period {
-    font-size: 0.875rem;
+.roadmap-card.active h3 {
+    color: white;
+}
+
+.roadmap-period {
+    font-size: 0.8rem;
     color: var(--color-text-light);
+    margin: 0.5rem 0 0 0;
+}
+
+.roadmap-card.active .roadmap-period {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.roadmap-arrow {
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    margin: 0 var(--spacing-sm);
+    flex-shrink: 0;
+}
+
+/* === Community Goals Preview === */
+.community-goals-preview {
+    background: var(--color-bg);
+    padding: var(--spacing-3xl) 0;
+}
+
+.goals-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+    margin: var(--spacing-2xl) 0;
+}
+
+.goal-card {
+    background: var(--color-bg-alt);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.goal-card:hover {
+    transform: translateY(-4px);
+}
+
+.goal-amount {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-accent);
     margin-bottom: var(--spacing-md);
 }
 
-.timeline-content ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.timeline-content li {
-    padding-left: 1.5rem;
-    position: relative;
-    margin-bottom: var(--spacing-xs);
-    color: var(--color-text-light);
-}
-
-.timeline-content li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
+.goal-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
     color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.goal-card p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
 }
 
 /* === Notify Section === */
@@ -748,6 +787,127 @@ section {
 
 .footer-links a:hover {
     color: var(--color-primary);
+}
+
+/* === Donation Page === */
+.hero-donate {
+    min-height: auto;
+    padding-top: 120px;
+    padding-bottom: var(--spacing-2xl);
+}
+
+.donate-section {
+    background: var(--color-bg);
+    padding: var(--spacing-3xl) 0;
+}
+
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin: var(--spacing-2xl) 0;
+}
+
+.goal-full-card {
+    background: var(--color-bg-alt);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.goal-full-card:hover {
+    transform: translateY(-4px);
+}
+
+.goal-header {
+    margin-bottom: var(--spacing-lg);
+}
+
+.goal-full-card .goal-amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-md);
+}
+
+.goal-full-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0;
+}
+
+.goal-description {
+    color: var(--color-text-light);
+    margin: var(--spacing-md) 0;
+    font-size: 0.95rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(0, 179, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: var(--spacing-md) 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--color-accent);
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    margin: 0;
+}
+
+.donation-methods {
+    margin: var(--spacing-xl) 0;
+}
+
+.donation-info {
+    background: var(--color-bg-alt);
+    padding: var(--spacing-2xl);
+    border-radius: var(--border-radius);
+    margin-top: var(--spacing-3xl);
+}
+
+.donation-info h3 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xl);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.info-card {
+    text-align: center;
+}
+
+.info-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    display: block;
+}
+
+.info-card h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.info-card p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
 }
 
 /* === Responsive Design === */
