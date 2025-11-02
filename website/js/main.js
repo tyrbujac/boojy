@@ -88,7 +88,9 @@ window.addEventListener('scroll', () => {
 const notifyForm = document.getElementById('notifyForm');
 const emailInput = document.getElementById('emailInput');
 
-notifyForm.addEventListener('submit', async (e) => {
+// Only add listener if form exists on page
+if (notifyForm && emailInput) {
+    notifyForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const email = emailInput.value.trim();
@@ -121,7 +123,10 @@ notifyForm.addEventListener('submit', async (e) => {
         // Log to console for now (remove in production)
         console.log('Email submitted:', email);
     }, 1000);
-});
+    });
+} else {
+    console.log('Email form not found on this page - skipping');
+}
 
 // Email validation helper
 function isValidEmail(email) {
@@ -314,3 +319,43 @@ function debounce(func, wait) {
 
 // Apply debounce to scroll handlers if needed
 // (Current implementation is lightweight enough, but keep this for future optimization)
+
+// ===================================
+// FAQ Accordion
+// ===================================
+function initFAQ() {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    // Check if FAQ items exist on the page
+    if (faqItems.length === 0) {
+        return; // No FAQ on this page, exit early
+    }
+
+    faqItems.forEach((item) => {
+        const question = item.querySelector('.faq-question');
+
+        // Safety check
+        if (!question) return;
+
+        question.addEventListener('click', () => {
+            // Close other open FAQ items
+            const isActive = item.classList.contains('active');
+            faqItems.forEach(otherItem => {
+                otherItem.classList.remove('active');
+            });
+
+            // Toggle current item
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
+}
+
+// Initialize FAQ when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFAQ);
+} else {
+    initFAQ();
+}
+
