@@ -90,10 +90,10 @@
             <h2 class="section-title">The Story Behind Boojy</h2>
             <div style="max-width: 800px; margin: 0 auto; color: var(--color-text); line-height: 1.8;">
                 <p style="margin-bottom: var(--spacing-lg);">
-                    Boojy was born from frustration with the current state of creative software. Every year, subscription costs rise while features stagnate. Independent creators, students, and hobbyists struggle to afford the tools they need to pursue their passions.
+                    Boojy was created to make creative apps free and accessible for everyone. We believe that powerful creative tools shouldn't be limited by expensive subscriptions or restrictive licenses.
                 </p>
                 <p style="margin-bottom: var(--spacing-lg);">
-                    We asked ourselves: what if there was a better way? What if professional-grade creative tools were accessible to everyone, regardless of their financial situation? What if software respected users instead of treating them as revenue streams?
+                    Professional-grade creative software should be available to independent creators, students, hobbyists, and anyone who wants to bring their ideas to life — regardless of their financial situation.
                 </p>
                 <p style="margin-bottom: var(--spacing-lg);">
                     That's why we're building Boojy — a suite of creative applications that are free, open-source, and community-driven. No subscriptions. No ads. No compromises.
@@ -150,9 +150,29 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <!-- Email Signup -->
+            <div class="footer-signup">
+                <h3 class="signup-title">Stay Updated</h3>
+                <p class="signup-description">Get notified about new releases and devlog updates</p>
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="signup-form">
+                    <input type="email" name="email" placeholder="Your email" required class="signup-input">
+                    <div class="signup-checkboxes">
+                        <label class="signup-checkbox">
+                            <input type="checkbox" name="updates" value="releases" checked>
+                            <span>Release updates</span>
+                        </label>
+                        <label class="signup-checkbox">
+                            <input type="checkbox" name="updates" value="devlog" checked>
+                            <span>Devlog updates</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-signup">Subscribe</button>
+                </form>
+            </div>
+
             <p class="footer-links">
                 <a href="about.html">About</a> ·
-                <a href="mailto:contact@boojy.org">Contact</a> ·
+                <a href="contact.html">Contact</a> ·
                 <a href="feature-request.html">Request a Feature</a> ·
                 <a href="donate.html">Donate</a> ·
                 <a href="privacy.html">Privacy</a> ·

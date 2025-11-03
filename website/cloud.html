@@ -144,6 +144,65 @@
         </div>
     </section>
 
+    <!-- Pricing Section -->
+    <section class="key-features-section" style="background: var(--color-bg);">
+        <div class="container">
+            <h2 class="section-title">Storage Plans</h2>
+            <p class="section-subtitle" style="margin-bottom: var(--spacing-2xl);">
+                Choose the plan that fits your needs. All plans include full feature access.
+            </p>
+            <div class="key-features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🆓</div>
+                    <h3 class="feature-title">Free</h3>
+                    <p class="feature-description" style="font-size: 2rem; font-weight: 700; color: var(--color-accent); margin: var(--spacing-md) 0;">
+                        £0<span style="font-size: 1rem; font-weight: 400; color: var(--color-text-light);">/month</span>
+                    </p>
+                    <p class="feature-description">
+                        <strong>1 GB storage</strong><br>
+                        Perfect for trying out Boojy Cloud
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3 class="feature-title">Plus</h3>
+                    <p class="feature-description" style="font-size: 2rem; font-weight: 700; color: var(--color-accent); margin: var(--spacing-md) 0;">
+                        £2<span style="font-size: 1rem; font-weight: 400; color: var(--color-text-light);">/month</span>
+                    </p>
+                    <p class="feature-description">
+                        <strong>10 GB storage</strong><br>
+                        Great for casual creators
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💎</div>
+                    <h3 class="feature-title">Pro</h3>
+                    <p class="feature-description" style="font-size: 2rem; font-weight: 700; color: var(--color-accent); margin: var(--spacing-md) 0;">
+                        £5<span style="font-size: 1rem; font-weight: 400; color: var(--color-text-light);">/month</span>
+                    </p>
+                    <p class="feature-description">
+                        <strong>100 GB storage</strong><br>
+                        Ideal for active creators
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">Max</h3>
+                    <p class="feature-description" style="font-size: 2rem; font-weight: 700; color: var(--color-accent); margin: var(--spacing-md) 0;">
+                        £15<span style="font-size: 1rem; font-weight: 400; color: var(--color-text-light);">/month</span>
+                    </p>
+                    <p class="feature-description">
+                        <strong>1 TB storage</strong><br>
+                        For professional workflows
+                    </p>
+                </div>
+            </div>
+            <p style="text-align: center; color: var(--color-text-light); font-size: 0.9rem; margin-top: var(--spacing-xl); font-style: italic;">
+                * Pricing is provisional and subject to change. Cloud subscriptions launch February 2026.
+            </p>
+        </div>
+    </section>
+
     <!-- Get Started Section -->
     <section class="download-section-app">
         <div class="container">
@@ -196,9 +255,29 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <!-- Email Signup -->
+            <div class="footer-signup">
+                <h3 class="signup-title">Stay Updated</h3>
+                <p class="signup-description">Get notified about new releases and devlog updates</p>
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="signup-form">
+                    <input type="email" name="email" placeholder="Your email" required class="signup-input">
+                    <div class="signup-checkboxes">
+                        <label class="signup-checkbox">
+                            <input type="checkbox" name="updates" value="releases" checked>
+                            <span>Release updates</span>
+                        </label>
+                        <label class="signup-checkbox">
+                            <input type="checkbox" name="updates" value="devlog" checked>
+                            <span>Devlog updates</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-signup">Subscribe</button>
+                </form>
+            </div>
+
             <p class="footer-links">
                 <a href="index.html">Home</a> ·
-                <a href="mailto:contact@boojy.org">Contact</a> ·
+                <a href="contact.html">Contact</a> ·
                 <a href="feature-request.html">Request a Feature</a> ·
                 <a href="donate.html">Donate</a> ·
                 <a href="privacy.html">Privacy</a> ·

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Support Boojy Suite development with donations. Help us build faster with stretch goals.">
-    <title>Support Boojy – Make Creativity Free</title>
+    <meta name="description" content="Get in touch with the Boojy team. Report bugs, request features, or send us your questions.">
+    <title>Contact Us – Boojy</title>
     <link rel="stylesheet" href="css/styles.css?v=2">
 </head>
 <body>
@@ -41,90 +41,51 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero hero-donate">
+    <section class="hero hero-feature-request">
         <div class="container hero-content">
-            <h1 class="hero-title">Support Boojy Suite</h1>
+            <h1 class="hero-title">Contact Us</h1>
             <p class="hero-subtitle">
-                Help keep Boojy free forever. Choose one-time or monthly support—any amount helps build better creative tools for everyone.
+                Get in touch with the Boojy team. Report bugs, request features, or ask questions.
             </p>
         </div>
     </section>
 
-    <!-- Donation Goals -->
-    <section class="donate-section">
+    <!-- Contact Form -->
+    <section class="feature-request-section">
         <div class="container">
-            <!-- Donation Button -->
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <h2 style="font-size: 2rem; font-weight: 700; color: var(--color-primary); margin-bottom: 1rem;">Choose Your Support</h2>
-                <p style="color: var(--color-text-light); margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto; font-size: 1.125rem;">
-                    Choose one-time or monthly support. Any amount helps—you decide what works for you.
-                </p>
-                <div class="donation-methods">
-                    <a href="https://buymeacoffee.com/boojy" target="_blank" class="btn btn-coffee">
-                        ☕ Support on Buy Me a Coffee
-                    </a>
-                </div>
-            </div>
+            <div class="form-container">
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="feature-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your name">
+                    </div>
 
-            <!-- Community Stats -->
-            <div class="community-stats">
-                <div class="stat-card">
-                    <div class="stat-amount">$0</div>
-                    <p class="stat-label">MONTHLY CONTRIBUTION</p>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-amount">0</div>
-                    <p class="stat-label">INDIVIDUALS</p>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-amount">0</div>
-                    <p class="stat-label">CORPORATE</p>
-                </div>
-            </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com">
+                    </div>
 
-            <!-- Supporter Perks -->
-            <div class="donation-info" style="margin-top: 3rem; margin-bottom: 3rem;">
-                <h3>Supporter Perks</h3>
-                <p style="text-align: center; color: var(--color-text-light); margin-bottom: 2rem;">
-                    All supporters get the following perks, regardless of amount. No tiers, no pressure.
-                </p>
-                <div class="info-grid">
-                    <div class="info-card">
-                        <div class="info-icon">🏆</div>
-                        <h4>Supporter Badge</h4>
-                        <p>Your name in app credits with a special Supporter badge when apps launch.</p>
+                    <div class="form-group">
+                        <label for="category">What can we help you with?</label>
+                        <select id="category" name="category" required class="form-select">
+                            <option value="">Select a category...</option>
+                            <option value="feature-request">Feature Request</option>
+                            <option value="bug-report">Bug Report</option>
+                            <option value="general">General Enquiry</option>
+                        </select>
                     </div>
-                    <div class="info-card">
-                        <div class="info-icon">🎨</div>
-                        <h4>Early Merch Access</h4>
-                        <p>First access to Boojy merch drops 1-2 weeks before public launch.</p>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-icon">✨</div>
-                        <h4>Dev Log Shoutout</h4>
-                        <p>Recognition in our monthly dev logs with your name shown on screen (you can opt out).</p>
-                    </div>
-                </div>
-            </div>
 
-            <div class="donation-info">
-                <h3>How Your Donation Helps</h3>
-                <div class="info-grid">
-                    <div class="info-card">
-                        <div class="info-icon">⚡</div>
-                        <h4>Faster Development</h4>
-                        <p>Donations help us accelerate development timelines and launch features sooner.</p>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required placeholder="Tell us more..." rows="6"></textarea>
                     </div>
-                    <div class="info-card">
-                        <div class="info-icon">🔓</div>
-                        <h4>Always Free & Open</h4>
-                        <p>Boojy Suite will always remain free forever. Donations fuel development, not paywalls.</p>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-icon">📢</div>
-                        <h4>Transparent Updates</h4>
-                        <p>Monthly public updates show exactly how donations are being used and progress made.</p>
-                    </div>
+
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+
+                <div class="form-info">
+                    <p><strong>Prefer another method?</strong></p>
+                    <p>You can also reach us at <a href="mailto:contact@boojy.org">contact@boojy.org</a> or submit issues on our <a href="https://github.com/tsbujacncl/boojy" target="_blank">GitHub repository</a>.</p>
                 </div>
             </div>
         </div>
@@ -133,9 +94,29 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <!-- Email Signup -->
+            <div class="footer-signup">
+                <h3 class="signup-title">Stay Updated</h3>
+                <p class="signup-description">Get notified about new releases and devlog updates</p>
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="signup-form">
+                    <input type="email" name="email" placeholder="Your email" required class="signup-input">
+                    <div class="signup-checkboxes">
+                        <label class="signup-checkbox">
+                            <input type="checkbox" name="updates" value="releases" checked>
+                            <span>Release updates</span>
+                        </label>
+                        <label class="signup-checkbox">
+                            <input type="checkbox" name="updates" value="devlog" checked>
+                            <span>Devlog updates</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-signup">Subscribe</button>
+                </form>
+            </div>
+
             <p class="footer-links">
-                <a href="about.html">About Us</a> ·
-                <a href="mailto:contact@boojy.org">Contact</a> ·
+                <a href="about.html">About</a> ·
+                <a href="contact.html">Contact</a> ·
                 <a href="feature-request.html">Request a Feature</a> ·
                 <a href="donate.html">Donate</a> ·
                 <a href="privacy.html">Privacy</a> ·

@@ -254,9 +254,29 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <!-- Email Signup -->
+            <div class="footer-signup">
+                <h3 class="signup-title">Stay Updated</h3>
+                <p class="signup-description">Get notified about new releases and devlog updates</p>
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="signup-form">
+                    <input type="email" name="email" placeholder="Your email" required class="signup-input">
+                    <div class="signup-checkboxes">
+                        <label class="signup-checkbox">
+                            <input type="checkbox" name="updates" value="releases" checked>
+                            <span>Release updates</span>
+                        </label>
+                        <label class="signup-checkbox">
+                            <input type="checkbox" name="updates" value="devlog" checked>
+                            <span>Devlog updates</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-signup">Subscribe</button>
+                </form>
+            </div>
+
             <p class="footer-links">
                 <a href="about.html">About</a> ·
-                <a href="mailto:contact@boojy.org">Contact</a> ·
+                <a href="contact.html">Contact</a> ·
                 <a href="feature-request.html">Request a Feature</a> ·
                 <a href="donate.html">Donate</a> ·
                 <a href="privacy.html">Privacy</a> ·
