@@ -12,7 +12,7 @@ Boojy Suite is a complete ecosystem of creative applications designed to replace
 **Core principles:**
 - **Free forever** - No subscriptions, no paywalls, no trials
 - **Open-source** - Code is public and auditable (after v1.0)
-- **Privacy-first** - No telemetry, no ads, no data collection
+- **Privacy-first** - Opt-out anonymous telemetry, zero-knowledge Cloud encryption, no ads
 - **Cross-platform** - Windows, Mac, Linux, iPad, Web
 - **Commercial use allowed** - Use for paid work without licensing fees
 
@@ -34,7 +34,7 @@ Boojy Suite is a complete ecosystem of creative applications designed to replace
 
 ## Get Started
 
-- **Website:** [Preview the website](https://github.com/tsbujacncl/boojy/tree/master/website) *(ready for deployment)*
+- **Website:** [boojy.org](https://boojy.org) *(live)*
 - **Downloads:** Coming in Preview phase (Month 2+)
 - **Documentation:** [docs/](./docs) folder contains vision, roadmap, and business plan
 - **Discussions:** [Join the conversation](https://github.com/tsbujacncl/boojy/discussions)
@@ -69,22 +69,18 @@ Boojy Suite is a complete ecosystem of creative applications designed to replace
 
 ## Website
 
-The Boojy Suite landing page is in the [`website/`](./website) folder and ready to deploy!
+The Boojy Suite website is live at [boojy.org](https://boojy.org)!
 
 **Features:**
-- Professional Lunar Grey design
+- Professional space-themed design (dark mode)
 - Responsive mobile-first layout
-- Playful planet-themed app cards
-- Email signup integration ready
+- Individual app pages (Audio, Draw, Design, Cloud)
+- Legal compliance (Privacy Policy, Terms of Service, About Us)
+- SEO optimization (sitemap.xml, robots.txt)
+- Custom 404 error page
 - Pure HTML/CSS/JS (no frameworks)
 
-**Deploy to Netlify:**
-```bash
-cd website
-netlify deploy --prod
-```
-
-Or drag the `website/` folder to [Netlify Drop](https://app.netlify.com/drop)
+**Source:** [`website/`](./website) folder
 
 ---
 
@@ -185,10 +181,13 @@ A: Absolutely! No licensing fees, no restrictions. Use for client work, freelanc
 **Q: When will apps be open-source?**  
 A: After each app reaches v1.0 stability (feature-complete + stable). Audio v1.0 expected Month 15+.
 
-**Q: How is Boojy different from Adobe?**  
-A: Free (no £798/year subscription), privacy-first (no tracking), open-source (after v1.0), no generative AI (respects human creativity).
+**Q: How is Boojy different from Adobe?**
+A: Free (no £798/year subscription), privacy-first (opt-out telemetry), open-source (after v1.0), no generative AI (respects human creativity).
 
-**Q: Does Boojy have generative AI?**  
+**Q: Does Boojy collect any data?**
+A: Apps collect anonymous usage data (crash reports, feature usage, performance metrics) to improve quality. This is opt-out - disable anytime in Settings → Privacy. We can't identify individual users. See [Privacy Policy](https://boojy.org/privacy.html) for details.
+
+**Q: Does Boojy have generative AI?**
 A: No. Boojy apps do not include AI image generation or AI fill tools. AI helps *build* the software (coding assistance), but doesn't touch *your* creative work.
 
 ---
@@ -198,7 +197,13 @@ A: No. Boojy apps do not include AI image generation or AI fill tools. AI helps 
 ```
 boojy/
 ├── docs/              # Vision, roadmap, business plan
-├── website/           # Landing page (ready to deploy)
+├── website/           # Live website (boojy.org)
+│   ├── index.html, audio.html, draw.html, design.html, cloud.html
+│   ├── about.html, privacy.html, terms.html, 404.html
+│   ├── roadmap.html, devlog.html, downloads.html
+│   ├── donate.html, feature-request.html
+│   ├── sitemap.xml, robots.txt
+│   ├── css/, js/
 ├── .github/           # GitHub workflows and templates
 └── README.md          # This file
 ```

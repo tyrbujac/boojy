@@ -6,7 +6,7 @@ Official website for Boojy Suite - Creativity Without Limits
 
 This is the landing page and marketing website for the Boojy Suite creative tools ecosystem. Built with pure HTML, CSS, and JavaScript for simplicity and performance.
 
-**Theme:** Lunar Grey professional design with playful planet accents
+**Theme:** Space-themed dark design with vibrant planet accents
 
 ## 🚀 Quick Start
 
@@ -27,44 +27,64 @@ This is the landing page and marketing website for the Boojy Suite creative tool
 
 ```
 website/
-├── index.html          # Main landing page
+├── index.html                  # Main landing page
+├── audio.html                  # Boojy Audio detail page
+├── draw.html                   # Boojy Draw detail page
+├── design.html                 # Boojy Design detail page
+├── cloud.html                  # Boojy Cloud detail page
+├── about.html                  # About Us page
+├── privacy.html                # Privacy Policy
+├── terms.html                  # Terms of Service
+├── 404.html                    # Custom 404 error page
+├── roadmap.html                # Development roadmap
+├── devlog.html                 # Developer blog
+├── downloads.html              # Downloads page
+├── donate.html                 # Donation page
+├── feature-request.html        # Feature request form
+├── sitemap.xml                 # SEO sitemap
+├── robots.txt                  # Crawler directives
 ├── css/
-│   └── styles.css      # All styles (Lunar Grey theme)
+│   └── styles.css              # All styles (space theme)
 ├── js/
-│   └── main.js         # Interactivity & animations
-├── images/             # Images and assets (add as needed)
-├── netlify.toml        # Netlify deployment config
-└── README.md           # This file
+│   └── main.js                 # Interactivity & animations
+├── netlify.toml                # Netlify deployment config
+└── README.md                   # This file
 ```
 
 ## 🎨 Design System
 
 ### Colors
 
-- **Background**: `#D8D9DD` (Lunar Grey)
-- **Panels/Cards**: `#C8C9CE` (Meteor Grey)
-- **Text**: `#2A2A2A` (Charcoal)
-- **Primary**: `#2A2A2A` (Charcoal)
-- **Accent**: `#00B3FF` (Uranus Blue)
+- **Background**: `#1A1B23` (Deep Space)
+- **Panels/Cards**: `#23242E` (Panel Grey)
+- **Text**: `#E5E7EB` (Light Grey)
+- **Primary**: `#FFFFFF` (White)
+- **Accent**: `#A855F7` (Purple)
 
-**App Planet Colors:**
-- Audio: `#A855F7` (Purple)
-- Draw: `#FF6B3D` (Mars Coral)
-- Design: `#00B3FF` (Uranus Blue)
-- Video: `#FACC15` (Sun Gold)
-- Animate: `#C77DFF` (Venus Lilac)
-- Score: `#3730A3` (Deep Blue)
+**Navigation Link Colors:**
+- Audio: `#8C8C8C` (Gray) → `#B0B0B0` on hover
+- Draw: `#F5F5DC` (Cream) → `#FFFACD` on hover
+- Design: `#4A90E2` (Blue) → `#67A3EE` on hover
+- Cloud: `#6366F1` (Indigo) → `#818CF8` on hover
+- Roadmap: `#F97316` (Orange) → `#FB923C` on hover
+- Devlog: `#EF4444` (Red) → `#F87171` on hover
+- Downloads: `#14B8A6` (Teal) → `#2DD4BF` on hover
+- GitHub: `#A855F7` (Purple) → `#C084FC` on hover
 
 ### Features
 
-- 🎨 Static planet icons on app cards (vibrant accents)
+- 🌌 Space-themed dark design with starfield backgrounds
 - 📱 Fully responsive (mobile-first)
-- ♿ Accessible navigation
-- 🚀 Smooth scrolling
-- 💫 Smooth hover animations and transitions
-- 📧 Email signup form (ready for API integration)
+- ♿ Accessible navigation with color-coded links
+- 🚀 Smooth scrolling and page transitions
+- 💫 Smooth hover animations and transforms
+- 🎨 Individual app detail pages (Audio, Draw, Design, Cloud)
+- ⚖️ Legal compliance (Privacy Policy, Terms, About Us)
+- 🔍 SEO optimized (sitemap.xml, robots.txt, meta tags)
+- 🚫 Custom 404 error page
+- 🎯 Cache busting (v=2 on CSS/JS)
 - 🌫️ Clean, professional aesthetic
-- ✨ Playful personality through colors and interactions
+- ✨ Vibrant personality through colors and interactions
 
 ## 🌐 Deployment
 
@@ -106,22 +126,24 @@ website/
 ## 📝 To-Do
 
 - [ ] Add email subscription API endpoint
-- [ ] Create individual app detail pages
+- [x] Create individual app detail pages ✅
 - [ ] Add screenshots/mockups when apps are ready
-- [ ] Create 404 page
-- [ ] Add blog section for devlogs
-- [ ] Implement analytics (privacy-friendly)
+- [x] Create 404 page ✅
+- [ ] Add blog system for devlogs (devlog.html exists, needs CMS/blog engine)
+- [x] Privacy-friendly telemetry (opt-out anonymous data) ✅
 - [ ] Add RSS feed for updates
 - [ ] Create downloadable press kit
+- [ ] Add favicon and app icons
 
 ## 🎯 Future Enhancements
 
-- Add dark mode variant of Lunar Grey
-- Create individual app detail pages
+- Add light mode variant (currently dark only)
 - Add interactive app demos or mockups
+- Add screenshots when apps are ready
 - Add testimonials section
 - Build community showcase
-- Implement blog for devlogs
+- Implement dynamic blog system (currently static devlog.html)
+- Add favicon and app icons
 
 ## 🛠 Tech Stack
 

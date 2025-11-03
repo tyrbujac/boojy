@@ -48,11 +48,14 @@ Apps go open-source after they reach v1.0 stability (feature-complete + stable).
 
 ### 3. Privacy-First
 
-- No telemetry by default (opt-in analytics only, if you choose)
+- **Opt-out anonymous telemetry** (on by default, disable anytime in Settings → Privacy)
+- Collects crash reports, feature usage, and performance metrics to improve apps
+- Completely transparent about what's collected (see Privacy Policy)
+- Can't identify individual users - truly anonymous
 - No ads, ever
 - No data mining or selling user information
 - Your projects stay yours
-- Boojy Cloud is encrypted and never scans your files
+- **Boojy Cloud uses zero-knowledge encryption** (you control the keys, we can't see your files)
 
 ### 4. Human + AI Development
 
@@ -235,11 +238,12 @@ Your feedback shapes priorities. Early testers, GitHub discussions, YouTube devl
 
 **Boojy Cloud** is built specifically for creative workflows:
 
+- ✅ **Zero-knowledge encryption** (files encrypted on your device before upload - you control the keys)
 - ✅ Auto-versioning (every save creates a version, restore any previous state)
 - ✅ Smart previews (thumbnails show actual artwork, waveforms, designs)
 - ✅ Cross-app awareness (open Draw file in Design seamlessly)
 - ✅ Offline-first (work without internet, sync when connected)
-- ✅ Privacy (no file scanning for ads or AI training)
+- ✅ Privacy (we literally cannot see your files, no scanning for ads or AI training)
 
 ### Storage Tiers
 
@@ -504,7 +508,7 @@ MONTHS 24-36 [Completion & Ecosystem]
 
 **Follow development:**
 
-- Website: boojy.org _(launching Month 3)_
+- Website: boojy.org _(live now!)_
 - YouTube: @Boojy _(monthly devlogs starting Month 4)_
 - GitHub: github.com/boojyorg _(public after Preview)_
 - X/Twitter: @boojyorg _(progress updates)_
