@@ -8,125 +8,125 @@
     <meta property="og:description" content="A free, simple music studio for macOS and Windows. Perfect for making your first beat.">
     <meta property="og:type" content="website">
     <title>Boojy Audio – Free DAW for Beginners</title>
-    <link rel="stylesheet" href="css/styles.css?v=3">
+    <link rel="stylesheet" href="css/styles.css?v=4">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <img src="images/boojy-logo.svg" alt="Boojy Audio" class="logo-image">
+            <!-- Left: Logo + Brand -->
+            <a href="https://boojy.org" class="nav-brand">
+                <img src="images/Boojy_Image_Logo.png" alt="Boojy" class="logo-icon">
+                <img src="images/boojy-logo.svg" alt="Boojy" class="brand-logo">
             </a>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu">
-                <li class="nav-group nav-info">
-                    <a href="#features">Features</a>
-                    <a href="#download">Download</a>
-                    <a href="https://github.com/tsbujacncl/boojy" target="_blank">GitHub</a>
-                </li>
-            </ul>
+
+            <!-- Center: Products -->
+            <div class="nav-products">
+                <a href="index.html" class="nav-product active">Audio</a>
+            </div>
+
+            <!-- Right: GitHub -->
+            <div class="nav-right">
+                <a href="https://github.com/tsbujacncl/boojy" target="_blank" class="nav-github" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="nav-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="nav-mobile-menu">
+                <a href="index.html" class="nav-mobile-link active">Audio</a>
+                <a href="https://github.com/tsbujacncl/boojy" target="_blank" class="nav-mobile-link">GitHub</a>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero-compact">
         <div class="container hero-content">
-            <div class="app-hero-planet">
-                <div class="planet-icon planet-audio"></div>
-            </div>
-            <h1 class="hero-title">Boojy Audio</h1>
-            <p class="hero-tagline">Creativity Without Limits</p>
+            <img src="images/Boojy Audio Text Logo.svg" alt="Boojy Audio" class="hero-text-logo">
             <p class="hero-subtitle">
-                A free, simple music studio for beginners. Available for macOS and Windows.
+                A free, simple music studio for beginners. macOS & Windows.
             </p>
-            <div class="hero-cta">
-                <a href="#download" class="btn-download-primary" id="primary-download">Download for macOS</a>
-                <a href="#download" class="btn-download-secondary" id="secondary-download">Also available for Windows</a>
+            <div class="hero-cta-row">
+                <a href="#" class="btn-download-primary">macOS</a>
+                <a href="#" class="btn-download-primary">Windows</a>
+                <a href="https://github.com/tsbujacncl/boojy" target="_blank" class="btn-download-outline">Source on GitHub</a>
             </div>
-        </div>
-        <div class="stars"></div>
-    </section>
-
-    <!-- Screenshot Section -->
-    <section class="screenshot-section">
-        <div class="container">
-            <div class="screenshot-wrapper">
-                <div class="screenshot-placeholder">
-                    <p>Main Interface</p>
-                    <span>Screenshot coming soon</span>
-                </div>
-            </div>
+            <p class="hero-requirements">macOS 10.15+ / Windows 10+ 64-bit</p>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="key-features-section">
+    <!-- Showcase Section: Carousel + Features -->
+    <section id="features" class="showcase-section">
         <div class="container">
-            <h2 class="section-title">Why Boojy Audio?</h2>
-            <div class="key-features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">💻</div>
-                    <h3 class="feature-title">Cross Platform</h3>
-                    <p class="feature-description">
-                        macOS and Windows. iPad and Linux coming later.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎹</div>
-                    <h3 class="feature-title">Plugin Support</h3>
-                    <p class="feature-description">
-                        Use VST3 and AU instruments and effects.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">✨</div>
-                    <h3 class="feature-title">Beginner Friendly</h3>
-                    <p class="feature-description">
-                        Clean interface. No overwhelming menus.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🆓</div>
-                    <h3 class="feature-title">Completely Free</h3>
-                    <p class="feature-description">
-                        No subscriptions, no paywalls. Free forever.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Download Section -->
-    <section id="download" class="download-section-app">
-        <div class="container">
-            <h2 class="section-title">Download Boojy Audio</h2>
-            <p class="section-subtitle">Free and open-source. Coming January 2026.</p>
-            <div class="download-platforms">
-                <span class="platform-download platform-download-disabled" title="Coming January 2026">
-                    <div class="platform-icon">🍎</div>
-                    <div class="platform-info">
-                        <h3>macOS</h3>
-                        <p>Coming January 2026</p>
+            <div class="showcase-grid">
+                <!-- Screenshot Carousel -->
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-slide active">
+                            <img src="images/screenshot-main-interface.png" alt="Boojy Audio Main Interface" class="carousel-image">
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="screenshot-placeholder">
+                                <p>Mixer View</p>
+                                <span>Screenshot coming soon</span>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="screenshot-placeholder">
+                                <p>Piano Roll</p>
+                                <span>Screenshot coming soon</span>
+                            </div>
+                        </div>
                     </div>
-                </span>
-                <span class="platform-download platform-download-disabled" title="Coming January 2026">
-                    <div class="platform-icon">🪟</div>
-                    <div class="platform-info">
-                        <h3>Windows</h3>
-                        <p>Coming January 2026</p>
+                    <div class="carousel-dots">
+                        <button class="carousel-dot active" data-slide="0"></button>
+                        <button class="carousel-dot" data-slide="1"></button>
+                        <button class="carousel-dot" data-slide="2"></button>
                     </div>
-                </span>
+                </div>
+
+                <!-- Features List -->
+                <div class="features-sidebar">
+                    <div class="feature-item">
+                        <div class="feature-icon">💻</div>
+                        <div class="feature-text">
+                            <h3>Cross Platform</h3>
+                            <p>macOS and Windows. iPad and Linux coming later.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎹</div>
+                        <div class="feature-text">
+                            <h3>Plugin Support</h3>
+                            <p>Use VST3 and AU instruments and effects.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✨</div>
+                        <div class="feature-text">
+                            <h3>Beginner Friendly</h3>
+                            <p>Clean interface. No overwhelming menus.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🆓</div>
+                        <div class="feature-text">
+                            <h3>Completely Free</h3>
+                            <p>No subscriptions, no paywalls. Free forever.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="download-requirements">
-                <h3>System Requirements</h3>
-                <p><strong>macOS:</strong> 10.15+ (Catalina or later), Intel or Apple Silicon</p>
-                <p><strong>Windows:</strong> Windows 10+, 64-bit</p>
-            </div>
-            <p class="download-version">v0.1-beta</p>
         </div>
     </section>
 
@@ -144,12 +144,14 @@
         </div>
     </section>
 
-    <!-- Bug Report Section -->
-    <section class="bug-report-section">
+    <!-- Bug Report Section (Collapsible) -->
+    <section class="bug-report-section-collapsible">
         <div class="container">
-            <div class="bug-report-box">
-                <h2 class="section-title">Found a Bug?</h2>
-                <p class="section-subtitle">Help improve Boojy by reporting issues.</p>
+            <div class="bug-report-header" id="bug-report-toggle">
+                <span>Found a Bug?</span>
+                <span class="bug-report-arrow">▼</span>
+            </div>
+            <div class="bug-report-content" id="bug-report-content">
                 <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="bug-report-form">
                     <div class="form-row">
                         <div class="form-group">
@@ -186,24 +188,13 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-links">
-                <a href="mailto:tyr@boojy.org" class="contact-link">tyr@boojy.org</a>
-                <a href="https://github.com/tsbujacncl/boojy" target="_blank" class="contact-link">GitHub</a>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p class="footer-links">
                 <a href="privacy.html">Privacy</a> ·
                 <a href="terms.html">Terms</a> ·
-                <a href="https://github.com/tsbujacncl/boojy" target="_blank">GitHub</a>
+                <a href="mailto:tyr@boojy.org">Contact</a>
             </p>
             <div class="footer-social">
                 <a href="https://twitter.com/boojyorg" target="_blank" aria-label="Twitter" class="social-icon">
@@ -236,22 +227,6 @@
         </div>
     </footer>
 
-    <script src="js/main.js?v=3"></script>
-    <script>
-        // OS Detection for download buttons
-        (function() {
-            const primaryBtn = document.getElementById('primary-download');
-            const secondaryBtn = document.getElementById('secondary-download');
-            const userAgent = navigator.userAgent.toLowerCase();
-
-            if (userAgent.includes('win')) {
-                primaryBtn.textContent = 'Download for Windows';
-                secondaryBtn.textContent = 'Also available for macOS';
-            } else {
-                primaryBtn.textContent = 'Download for macOS';
-                secondaryBtn.textContent = 'Also available for Windows';
-            }
-        })();
-    </script>
+    <script src="js/main.js?v=5"></script>
 </body>
 </html>
