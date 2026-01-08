@@ -2396,6 +2396,16 @@ section {
     margin: var(--spacing-md) 0 0 0;
 }
 
+.footer-link {
+    color: var(--color-text-light);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    color: var(--color-accent);
+}
+
 /* === Feature Request Page === */
 .hero-feature-request {
     min-height: auto;
