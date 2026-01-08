@@ -440,3 +440,167 @@ if (document.readyState === 'loading') {
     initBugReportToggle();
 }
 
+// ===================================
+// Smart Download Section
+// ===================================
+const DOWNLOAD_CONFIG = {
+    version: '0.1',
+    versionDisplay: 'v0.1',
+    releaseDate: 'Jan 7, 2026',
+    baseUrl: 'https://github.com/tsbujacncl/boojy/releases/download/',
+    platforms: {
+        'mac-arm64': {
+            name: 'Mac (M1, M2, M3, M4)',
+            file: 'BoojyAudio-0.1-arm64.dmg',
+            icon: 'apple'
+        },
+        'mac-x64': {
+            name: 'Mac (Intel - older Macs)',
+            file: 'BoojyAudio-0.1-x64.dmg',
+            icon: 'apple'
+        },
+        'windows-x64': {
+            name: 'Windows',
+            file: 'BoojyAudio-0.1-x64.exe',
+            icon: 'windows'
+        },
+        'windows-arm64': {
+            name: 'Windows (ARM - Surface)',
+            file: 'BoojyAudio-0.1-arm64.exe',
+            icon: 'windows'
+        }
+    }
+};
+
+const PLATFORM_ICONS = {
+    apple: `<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>`,
+    windows: `<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>`
+};
+
+function detectPlatform() {
+    const userAgent = navigator.userAgent;
+    const platform = navigator.platform || navigator.userAgentData?.platform || '';
+
+    // macOS detection
+    if (platform.includes('Mac') || userAgent.includes('Mac')) {
+        // Try to detect Apple Silicon
+        // Method 1: Check WebGL renderer
+        try {
+            const canvas = document.createElement('canvas');
+            const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+            if (gl) {
+                const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+                if (debugInfo) {
+                    const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+                    if (renderer.includes('Apple M') || renderer.includes('Apple GPU')) {
+                        return 'mac-arm64';
+                    }
+                }
+            }
+        } catch (e) {}
+
+        // Method 2: Check userAgentData (if available)
+        if (navigator.userAgentData && navigator.userAgentData.platform === 'macOS') {
+            // Modern browsers on Apple Silicon
+            return 'mac-arm64';
+        }
+
+        // Default to Intel for older detection
+        return 'mac-x64';
+    }
+
+    // Windows detection
+    if (platform.includes('Win') || userAgent.includes('Windows')) {
+        // Check for ARM
+        if (userAgent.includes('ARM') || userAgent.includes('Qualcomm')) {
+            return 'windows-arm64';
+        }
+        return 'windows-x64';
+    }
+
+    // Detection failed (Linux, mobile, etc.)
+    return null;
+}
+
+function initDownloadSection() {
+    const downloadSection = document.getElementById('download-section');
+    if (!downloadSection) return;
+
+    const detectedState = document.getElementById('download-detected');
+    const selectState = document.getElementById('download-select');
+    const downloadBtn = document.getElementById('download-btn');
+    const downloadIcon = document.getElementById('download-icon');
+    const detectedIcon = document.getElementById('detected-icon');
+    const platformName = document.getElementById('platform-name');
+    const otherDownloadsToggle = document.getElementById('other-downloads-toggle');
+    const otherDownloadsMenu = document.getElementById('other-downloads-menu');
+    const platformSelector = document.getElementById('platform-selector');
+
+    const detectedPlatform = detectPlatform();
+
+    if (detectedPlatform && DOWNLOAD_CONFIG.platforms[detectedPlatform]) {
+        // Detection successful
+        const platform = DOWNLOAD_CONFIG.platforms[detectedPlatform];
+
+        // Set download button
+        downloadBtn.href = DOWNLOAD_CONFIG.baseUrl + 'v' + DOWNLOAD_CONFIG.version + '/' + platform.file;
+        downloadIcon.innerHTML = PLATFORM_ICONS[platform.icon];
+        detectedIcon.innerHTML = PLATFORM_ICONS[platform.icon];
+        platformName.textContent = platform.name;
+
+        // Build other downloads menu
+        let otherOptions = '';
+        for (const [key, value] of Object.entries(DOWNLOAD_CONFIG.platforms)) {
+            if (key !== detectedPlatform) {
+                const downloadUrl = DOWNLOAD_CONFIG.baseUrl + 'v' + DOWNLOAD_CONFIG.version + '/' + value.file;
+                otherOptions += `<a href="${downloadUrl}" class="dropdown-item">${PLATFORM_ICONS[value.icon]} ${value.name}</a>`;
+            }
+        }
+        otherDownloadsMenu.innerHTML = otherOptions;
+
+        // Show detected state
+        detectedState.style.display = 'block';
+        selectState.style.display = 'none';
+    } else {
+        // Detection failed - show select dropdown
+        detectedState.style.display = 'none';
+        selectState.style.display = 'block';
+    }
+
+    // Toggle dropdown
+    if (otherDownloadsToggle) {
+        otherDownloadsToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            otherDownloadsMenu.classList.toggle('active');
+            otherDownloadsToggle.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!otherDownloadsToggle.contains(e.target) && !otherDownloadsMenu.contains(e.target)) {
+                otherDownloadsMenu.classList.remove('active');
+                otherDownloadsToggle.classList.remove('active');
+            }
+        });
+    }
+
+    // Platform selector (for failed detection)
+    if (platformSelector) {
+        platformSelector.addEventListener('change', (e) => {
+            const selected = e.target.value;
+            if (selected && DOWNLOAD_CONFIG.platforms[selected]) {
+                const platform = DOWNLOAD_CONFIG.platforms[selected];
+                const downloadUrl = DOWNLOAD_CONFIG.baseUrl + 'v' + DOWNLOAD_CONFIG.version + '/' + platform.file;
+                window.location.href = downloadUrl;
+            }
+        });
+    }
+}
+
+// Initialize download section
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDownloadSection);
+} else {
+    initDownloadSection();
+}
+

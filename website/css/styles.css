@@ -89,7 +89,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(42, 42, 42, 0.95);
+    background: rgba(53, 53, 53, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--color-border);
     z-index: 100;
@@ -157,17 +157,7 @@ body {
 
 .nav-product.active {
     color: var(--color-accent);
-}
-
-.nav-product.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--color-accent);
-    border-radius: 1px;
+    font-weight: 700;
 }
 
 /* Right: GitHub + Mobile Toggle */
@@ -265,8 +255,58 @@ body {
     justify-content: center;
     text-align: center;
     padding-top: 80px;
-    padding-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
     background: var(--color-bg-alt);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Starfield effect */
+.hero-compact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 25% 35%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(2px 2px at 40% 15%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 55% 45%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 70% 25%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(2px 2px at 85% 40%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 15% 60%, rgba(255,255,255,0.35) 0%, transparent 100%),
+        radial-gradient(1px 1px at 30% 75%, rgba(255,255,255,0.45) 0%, transparent 100%),
+        radial-gradient(2px 2px at 50% 55%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 65% 70%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 80% 65%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 95% 30%, rgba(255,255,255,0.35) 0%, transparent 100%),
+        radial-gradient(2px 2px at 5% 85%, rgba(255,255,255,0.55) 0%, transparent 100%),
+        radial-gradient(1px 1px at 20% 90%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 45% 80%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 75% 85%, rgba(255,255,255,0.45) 0%, transparent 100%),
+        radial-gradient(2px 2px at 90% 75%, rgba(255,255,255,0.5) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Nebula gradient behind title */
+.hero-compact::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    width: 500px;
+    height: 300px;
+    background: radial-gradient(ellipse at center,
+        rgba(139, 92, 246, 0.25) 0%,
+        rgba(59, 130, 246, 0.15) 40%,
+        transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(40px);
 }
 
 .hero-content {
@@ -287,13 +327,13 @@ body {
     max-width: 280px;
     width: 100%;
     height: auto;
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
 }
 
 .hero-subtitle {
     font-size: 1.25rem;
     color: var(--color-text-light);
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
     font-weight: 400;
     max-width: 700px;
     margin-left: auto;
@@ -375,6 +415,208 @@ body {
 }
 
 .btn-download-secondary:hover {
+    color: var(--color-accent);
+}
+
+/* === Smart Download Section === */
+.download-section {
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.download-detected,
+.download-select {
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Main download button */
+.btn-download-main {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: var(--spacing-md) var(--spacing-2xl);
+    background: var(--color-accent);
+    color: #1A1B23;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: 700;
+    font-size: 1.125rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-download-main:hover {
+    background: #5CCBFA;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4);
+}
+
+.btn-download-main .download-arrow {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.download-icon {
+    display: flex;
+    align-items: center;
+}
+
+.download-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Detected platform text */
+.download-platform {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+.detected-icon {
+    display: inline-flex;
+    align-items: center;
+}
+
+.detected-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Other downloads dropdown */
+.download-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+    color: var(--color-text);
+}
+
+.dropdown-toggle.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    margin-left: 0.25rem;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-xs);
+    min-width: 220px;
+    z-index: 50;
+    margin-top: var(--spacing-xs);
+}
+
+.dropdown-menu.active {
+    display: block;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: var(--spacing-sm) var(--spacing-md);
+    color: var(--color-text);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+    white-space: nowrap;
+}
+
+.dropdown-item:hover {
+    background: var(--color-bg-dark);
+}
+
+.dropdown-item svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+/* Detection failed state */
+.download-select-title {
+    color: var(--color-text);
+    font-size: 1rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.download-selector {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    color: var(--color-text);
+    font-size: 1rem;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2338BDF8' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right var(--spacing-md) center;
+}
+
+.download-selector:focus {
+    outline: none;
+    border-color: var(--color-accent);
+}
+
+.download-help-link {
+    display: inline-block;
+    color: var(--color-text-light);
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.download-help-link:hover {
+    color: var(--color-accent);
+}
+
+/* Version info */
+.download-version {
+    color: var(--color-text-light);
+    font-size: 0.85rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+/* GitHub link */
+.download-github-link {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.download-github-link:hover {
     color: var(--color-accent);
 }
 
@@ -2102,20 +2344,20 @@ section {
     border-top: 1px solid var(--color-border);
 }
 
-.footer-links {
+.footer-contact {
     text-align: center;
     color: var(--color-text-light);
-    font-size: 0.875rem;
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-sm);
 }
 
-.footer-links a {
-    color: var(--color-text);
+.footer-contact a {
+    color: var(--color-accent);
     text-decoration: none;
     transition: color 0.3s ease;
-    font-weight: 500;
 }
 
-.footer-links a:hover {
+.footer-contact a:hover {
     color: var(--color-primary);
 }
 
@@ -2921,27 +3163,6 @@ section {
 
 /* === Responsive Design === */
 @media (max-width: 768px) {
-    /* Navigation - 3 section layout mobile */
-    .nav-toggle {
-        display: flex;
-    }
-
-    .nav-products {
-        display: none;
-    }
-
-    .nav-github {
-        display: none;
-    }
-
-    .nav-mobile-menu {
-        display: none;
-    }
-
-    .nav-mobile-menu.active {
-        display: flex;
-    }
-
     /* Hero */
     .hero-title {
         font-size: 2.5rem;
@@ -3083,6 +3304,27 @@ section {
         --spacing-xl: 2rem;
         --spacing-2xl: 3rem;
         --spacing-3xl: 4rem;
+    }
+
+    /* Navigation - only show hamburger on small screens */
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-products {
+        display: none;
+    }
+
+    .nav-github {
+        display: none;
+    }
+
+    .nav-mobile-menu {
+        display: none;
+    }
+
+    .nav-mobile-menu.active {
+        display: flex;
     }
 
     .hero-title {
