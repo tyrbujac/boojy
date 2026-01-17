@@ -444,29 +444,29 @@ if (document.readyState === 'loading') {
 // Smart Download Section
 // ===================================
 const DOWNLOAD_CONFIG = {
-    version: '0.1',
-    versionDisplay: 'v0.1',
-    releaseDate: 'Jan 7, 2026',
-    baseUrl: 'https://github.com/tsbujacncl/boojy/releases/download/',
+    version: '0.1.0',
+    versionDisplay: 'v0.1.0',
+    releaseDate: 'Jan 2026',
+    baseUrl: 'https://github.com/tyrbujac/boojy-audio/releases/latest/download/',
     platforms: {
         'mac-arm64': {
-            name: 'Mac (M1, M2, M3, M4)',
-            file: 'BoojyAudio-0.1-arm64.dmg',
+            name: 'Mac',
+            file: 'Boojy-Audio-mac.dmg',
             icon: 'apple'
         },
         'mac-x64': {
-            name: 'Mac (Intel - older Macs)',
-            file: 'BoojyAudio-0.1-x64.dmg',
+            name: 'Mac',
+            file: 'Boojy-Audio-mac.dmg',
             icon: 'apple'
         },
         'windows-x64': {
             name: 'Windows',
-            file: 'BoojyAudio-0.1-x64.exe',
+            file: 'Boojy-Audio-win.exe',
             icon: 'windows'
         },
         'windows-arm64': {
-            name: 'Windows (ARM - Surface)',
-            file: 'BoojyAudio-0.1-arm64.exe',
+            name: 'Windows',
+            file: 'Boojy-Audio-win.exe',
             icon: 'windows'
         }
     }
@@ -543,7 +543,7 @@ function initDownloadSection() {
         const platform = DOWNLOAD_CONFIG.platforms[detectedPlatform];
 
         // Set download button
-        downloadBtn.href = DOWNLOAD_CONFIG.baseUrl + 'v' + DOWNLOAD_CONFIG.version + '/' + platform.file;
+        downloadBtn.href = DOWNLOAD_CONFIG.baseUrl + platform.file;
         downloadIcon.innerHTML = PLATFORM_ICONS[platform.icon];
         detectedIcon.innerHTML = PLATFORM_ICONS[platform.icon];
         platformName.textContent = platform.name;
@@ -552,7 +552,7 @@ function initDownloadSection() {
         let otherOptions = '';
         for (const [key, value] of Object.entries(DOWNLOAD_CONFIG.platforms)) {
             if (key !== detectedPlatform) {
-                const downloadUrl = DOWNLOAD_CONFIG.baseUrl + 'v' + DOWNLOAD_CONFIG.version + '/' + value.file;
+                const downloadUrl = DOWNLOAD_CONFIG.baseUrl + value.file;
                 otherOptions += `<a href="${downloadUrl}" class="dropdown-item">${PLATFORM_ICONS[value.icon]} ${value.name}</a>`;
             }
         }
@@ -590,7 +590,7 @@ function initDownloadSection() {
             const selected = e.target.value;
             if (selected && DOWNLOAD_CONFIG.platforms[selected]) {
                 const platform = DOWNLOAD_CONFIG.platforms[selected];
-                const downloadUrl = DOWNLOAD_CONFIG.baseUrl + 'v' + DOWNLOAD_CONFIG.version + '/' + platform.file;
+                const downloadUrl = DOWNLOAD_CONFIG.baseUrl + platform.file;
                 window.location.href = downloadUrl;
             }
         });
