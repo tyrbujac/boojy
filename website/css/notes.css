@@ -1,0 +1,225 @@
+/* ===================================
+   BOOJY NOTES - Page Styles
+   =================================== */
+
+/* === Hero === */
+.notes-hero {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: var(--spacing-lg);
+    background: var(--color-bg-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Starfield */
+.notes-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(1px 1px at 8% 25%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 22% 40%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(2px 2px at 38% 12%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 52% 50%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 68% 22%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(2px 2px at 82% 38%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 12% 65%, rgba(255,255,255,0.35) 0%, transparent 100%),
+        radial-gradient(1px 1px at 35% 72%, rgba(255,255,255,0.45) 0%, transparent 100%),
+        radial-gradient(2px 2px at 48% 58%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 62% 75%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 78% 62%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 92% 28%, rgba(255,255,255,0.35) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Nebula glow — cyan/blue for Notes */
+.notes-hero::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse at center,
+        rgba(56, 189, 248, 0.1) 0%,
+        rgba(56, 189, 248, 0.04) 40%,
+        transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(60px);
+}
+
+.notes-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.notes-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.notes-subtitle {
+    font-size: 1.35rem;
+    color: var(--color-text-light);
+    font-weight: 400;
+    max-width: 500px;
+    margin: 0 auto var(--spacing-xl);
+    line-height: 1.6;
+}
+
+.notes-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.notes-coming-soon {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    opacity: 0.7;
+}
+
+/* === Screenshot === */
+.notes-screenshot-section {
+    background: var(--color-bg-dark);
+    padding: 0 0 var(--spacing-3xl);
+}
+
+.notes-screenshot-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.notes-screenshot {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* === Features Grid === */
+.notes-features-section {
+    background: var(--color-bg);
+    padding: var(--spacing-3xl) 0;
+}
+
+.notes-features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.notes-feature-card {
+    background: rgba(51, 51, 51, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+.notes-feature-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(56, 189, 248, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.notes-feature-icon {
+    font-size: 1.75rem;
+    display: block;
+    margin-bottom: var(--spacing-sm);
+}
+
+.notes-feature-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.notes-feature-card p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* === Cloud Upsell === */
+.notes-cloud-section {
+    background: var(--color-bg);
+    padding: 0 0 var(--spacing-3xl);
+}
+
+.notes-cloud-box {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: var(--spacing-2xl);
+    background: rgba(51, 51, 51, 0.4);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.notes-cloud-box h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.notes-cloud-box p {
+    color: var(--color-text-light);
+    font-size: 1.05rem;
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.6;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .notes-hero {
+        min-height: 40vh;
+        padding-top: 80px;
+    }
+
+    .notes-title {
+        font-size: 2.25rem;
+    }
+
+    .notes-features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .notes-title {
+        font-size: 1.85rem;
+    }
+
+    .notes-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .notes-features-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+}

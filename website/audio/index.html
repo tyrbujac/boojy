@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Boojy Audio - A free, simple music studio for macOS and Windows. Perfect for making your first beat.">
+    <meta property="og:title" content="Boojy Audio - Free DAW for Beginners">
+    <meta property="og:description" content="A free, simple music studio for macOS and Windows. Perfect for making your first beat.">
+    <meta property="og:type" content="website">
+    <title>Boojy Audio – Free DAW for Beginners</title>
+    <link rel="stylesheet" href="/css/shared.css">
+    <link rel="stylesheet" href="/css/audio.css">
+    <!-- Umami Analytics -->
+    <script defer src="https://umami-production-fc39.up.railway.app/script.js" data-website-id="863178bf-14fc-4b35-b45a-5e4ff4240862"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+                <img src="/images/Boojy_Image_Logo.png" alt="Boojy" class="logo-icon">
+                <img src="/images/boojy-logo.svg" alt="Boojy" class="brand-logo">
+            </a>
+
+            <div class="nav-products">
+                <a href="/audio/" class="nav-product active">Audio</a>
+                <a href="/notes/" class="nav-product">Notes</a>
+                <a href="/cloud/" class="nav-product">Cloud</a>
+            </div>
+
+            <div class="nav-right">
+                <a href="/account/" class="nav-signin">Sign in</a>
+                <button class="nav-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <div class="nav-mobile-menu">
+                <a href="/audio/" class="nav-mobile-link active">Audio</a>
+                <a href="/notes/" class="nav-mobile-link">Notes</a>
+                <a href="/cloud/" class="nav-mobile-link">Cloud</a>
+                <a href="/account/" class="nav-mobile-link">Sign in</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-compact">
+        <div class="container hero-content">
+            <img src="/images/Boojy Audio Text Logo.svg" alt="Boojy Audio" class="hero-text-logo">
+            <p class="hero-subtitle">
+                Music production without the barriers.
+            </p>
+            <!-- Smart Download Section -->
+            <div class="download-section" id="download-section">
+                <!-- Detection Success State -->
+                <div class="download-detected" id="download-detected">
+                    <a href="#" class="btn-download-main" id="download-btn">
+                        <span class="download-arrow">⬇</span>
+                        <span class="download-icon" id="download-icon"></span>
+                        <span>Download Boojy Audio</span>
+                    </a>
+                    <p class="download-platform" id="download-platform"><span class="detected-icon" id="detected-icon"></span> Detected: <span id="platform-name"></span></p>
+
+                    <div class="download-dropdown">
+                        <button class="dropdown-toggle" id="other-downloads-toggle">
+                            Other downloads <span class="dropdown-arrow">▾</span>
+                        </button>
+                        <div class="dropdown-menu" id="other-downloads-menu"></div>
+                    </div>
+                </div>
+
+                <!-- Detection Failed State -->
+                <div class="download-select" id="download-select" style="display: none;">
+                    <p class="download-select-title">Select your system:</p>
+                    <select class="download-selector" id="platform-selector">
+                        <option value="">Select...</option>
+                        <option value="mac-arm64">Mac (M1, M2, M3, M4)</option>
+                        <option value="mac-x64">Mac (Intel - older Macs)</option>
+                        <option value="windows-x64">Windows</option>
+                        <option value="windows-arm64">Windows (ARM - Surface)</option>
+                    </select>
+                    <a href="#" class="download-help-link" id="help-link">Not sure? Here's how to check ↗</a>
+                </div>
+
+                <!-- Version & GitHub -->
+                <p class="download-version">v0.1 (Beta) · Jan 7, 2026</p>
+                <a href="https://github.com/boojyorg/boojy" target="_blank" class="download-github-link">Source Code on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase Section: Carousel + Features -->
+    <section id="features" class="showcase-section">
+        <div class="container">
+            <div class="showcase-grid">
+                <!-- Screenshot Carousel -->
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-slide active">
+                            <img src="/images/screenshot-main-interface.png" alt="Boojy Audio Main Interface" class="carousel-image">
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="screenshot-placeholder">
+                                <p>Mixer View</p>
+                                <span>Screenshot coming soon</span>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="screenshot-placeholder">
+                                <p>Piano Roll</p>
+                                <span>Screenshot coming soon</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-dots">
+                        <button class="carousel-dot active" data-slide="0"></button>
+                        <button class="carousel-dot" data-slide="1"></button>
+                        <button class="carousel-dot" data-slide="2"></button>
+                    </div>
+                </div>
+
+                <!-- Features List -->
+                <div class="features-sidebar">
+                    <div class="feature-item">
+                        <div class="feature-icon">💻</div>
+                        <div class="feature-text">
+                            <h3>Cross Platform</h3>
+                            <p>macOS and Windows. iPad and Linux coming later.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎹</div>
+                        <div class="feature-text">
+                            <h3>Plugin Support</h3>
+                            <p>Use VST3 and AU instruments and effects.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✨</div>
+                        <div class="feature-text">
+                            <h3>Beginner Friendly</h3>
+                            <p>Clean interface. No overwhelming menus.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🆓</div>
+                        <div class="feature-text">
+                            <h3>Completely Free</h3>
+                            <p>No subscriptions, no paywalls. Free forever.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Signup Section -->
+    <section class="signup-section">
+        <div class="container">
+            <div class="signup-box">
+                <h2 class="signup-title">Stay Updated</h2>
+                <p class="signup-description" id="signup-description">Get notified about new releases and features. No spam. Unsubscribe anytime.</p>
+
+                <form id="signup-form" class="signup-form-inline">
+                    <input type="email" name="EMAIL" id="signup-email" placeholder="Your email" required class="signup-input">
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                        <input type="text" name="b_2cebb535b536483a415022089_e7ebb28e0a" tabindex="-1" value="">
+                    </div>
+                    <button type="submit" class="btn-signup" id="signup-btn">Subscribe</button>
+                </form>
+
+                <div id="signup-success" class="signup-success" style="display: none;">
+                    <div class="success-icon">✉️</div>
+                    <h3>Check your inbox!</h3>
+                    <p>We sent a confirmation link to <strong id="submitted-email"></strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bug Report (simplified) -->
+    <section class="bug-report-section-collapsible">
+        <div class="container">
+            <div class="bug-report-header" id="bug-report-toggle">
+                <span>Found a Bug?</span>
+                <span class="bug-report-arrow">▼</span>
+            </div>
+            <div class="bug-report-content" id="bug-report-content">
+                <div class="bug-report-form" style="text-align: center;">
+                    <p style="color: var(--color-text-light); margin-bottom: var(--spacing-md);">
+                        Help us improve Boojy Audio by reporting bugs.
+                    </p>
+                    <a href="mailto:tyr@boojy.org?subject=Bug Report — Boojy Audio" class="btn btn-primary">
+                        Email tyr@boojy.org
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-contact">Have a question? Reach out to me at <a href="mailto:tyr@boojy.org">tyr@boojy.org</a></p>
+            <div class="footer-social">
+                <a href="https://github.com/boojyorg/boojy" target="_blank" aria-label="GitHub" class="social-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="https://youtube.com/@boojy" target="_blank" aria-label="YouTube" class="social-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </a>
+            </div>
+            <p class="footer-copyright">© 2026 boojy.org — Made by Tyr · <a href="/privacy.html" class="footer-link">Privacy</a></p>
+        </div>
+    </footer>
+
+    <script src="/js/shared.js"></script>
+    <script src="/js/audio.js"></script>
+</body>
+</html>

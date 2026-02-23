@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Boojy - Creative tools that stay out of your way. Audio, Notes, and Cloud.">
-    <meta property="og:title" content="Boojy - Creative Tools">
-    <meta property="og:description" content="Creative tools that stay out of your way. Music production, note-taking, and cloud sync.">
+    <meta name="description" content="Boojy Notes - A calm space for your thoughts. Write in markdown, organize with folders. Free and runs in your browser.">
+    <meta property="og:title" content="Boojy Notes - A Calm Space for Your Thoughts">
+    <meta property="og:description" content="Write in markdown, organize with folders. Free and runs in your browser.">
     <meta property="og:type" content="website">
-    <title>Boojy – Creative Tools</title>
+    <title>Boojy Notes – A Calm Space for Your Thoughts</title>
     <link rel="stylesheet" href="/css/shared.css">
-    <link rel="stylesheet" href="/css/hub.css">
+    <link rel="stylesheet" href="/css/notes.css">
     <!-- Umami Analytics -->
     <script defer src="https://umami-production-fc39.up.railway.app/script.js" data-website-id="863178bf-14fc-4b35-b45a-5e4ff4240862"></script>
 </head>
@@ -24,7 +24,7 @@
 
             <div class="nav-products">
                 <a href="/audio/" class="nav-product">Audio</a>
-                <a href="/notes/" class="nav-product">Notes</a>
+                <a href="/notes/" class="nav-product active">Notes</a>
                 <a href="/cloud/" class="nav-product">Cloud</a>
             </div>
 
@@ -39,43 +39,79 @@
 
             <div class="nav-mobile-menu">
                 <a href="/audio/" class="nav-mobile-link">Audio</a>
-                <a href="/notes/" class="nav-mobile-link">Notes</a>
+                <a href="/notes/" class="nav-mobile-link active">Notes</a>
                 <a href="/cloud/" class="nav-mobile-link">Cloud</a>
                 <a href="/account/" class="nav-mobile-link">Sign in</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hub Hero -->
-    <section class="hub-hero">
+    <!-- Hero Section -->
+    <section class="notes-hero">
         <div class="container">
-            <img src="/images/Boojy_Image_Logo.png" alt="Boojy" class="hub-logo">
-            <img src="/images/boojy-logo.svg" alt="Boojy" class="hub-brand">
-            <p class="hub-tagline">Creative tools that stay out of your way.</p>
+            <h1 class="notes-title">Boojy Notes</h1>
+            <p class="notes-subtitle">A calm space for your thoughts.</p>
+            <div class="notes-cta">
+                <a href="https://notes.boojy.org" target="_blank" class="btn btn-primary">Open in Browser</a>
+                <p class="notes-coming-soon">Desktop app coming soon</p>
+            </div>
         </div>
     </section>
 
-    <!-- Product Cards -->
-    <section class="product-cards-section">
+    <!-- Screenshot Section -->
+    <section class="notes-screenshot-section">
         <div class="container">
-            <div class="product-cards">
-                <a href="/audio/" class="product-card" data-planet="audio">
-                    <img src="/images/audio-text-logo.png" alt="Boojy Audio" class="product-card-logo">
-                    <p class="product-card-description">A free, simple music studio for macOS and Windows. Open source. Perfect for making your first beat.</p>
-                    <span class="product-card-link">Learn more →</span>
-                </a>
+            <div class="notes-screenshot-wrapper">
+                <img src="/images/notes-screenshot-v0.1.png" alt="Boojy Notes — Shopping list with folders and dark theme" class="notes-screenshot">
+            </div>
+        </div>
+    </section>
 
-                <a href="/notes/" class="product-card" data-planet="notes">
-                    <img src="/images/Notes-text-logo.png" alt="Boojy Notes" class="product-card-logo">
-                    <p class="product-card-description">A calm space for your thoughts. Runs in your browser. Organize with folders, write in markdown.</p>
-                    <span class="product-card-link">Learn more →</span>
-                </a>
+    <!-- Features Section -->
+    <section class="notes-features-section">
+        <div class="container">
+            <div class="notes-features-grid">
+                <div class="notes-feature-card">
+                    <span class="notes-feature-icon">✍️</span>
+                    <h3>Markdown</h3>
+                    <p>Write with formatting that gets out of your way. Bold, headers, lists — all with simple syntax.</p>
+                </div>
+                <div class="notes-feature-card">
+                    <span class="notes-feature-icon">📴</span>
+                    <h3>Offline</h3>
+                    <p>Your notes are stored locally. No internet required. Works anywhere, anytime.</p>
+                </div>
+                <div class="notes-feature-card">
+                    <span class="notes-feature-icon">📁</span>
+                    <h3>Folders</h3>
+                    <p>Organize your thoughts into folders. Simple and clean, like a real filing cabinet.</p>
+                </div>
+                <div class="notes-feature-card">
+                    <span class="notes-feature-icon">🌙</span>
+                    <h3>Dark Theme</h3>
+                    <p>Easy on the eyes. A beautiful dark interface designed for focus.</p>
+                </div>
+                <div class="notes-feature-card">
+                    <span class="notes-feature-icon">🔍</span>
+                    <h3>Fast Search</h3>
+                    <p>Find any note instantly. Search across all your folders in milliseconds.</p>
+                </div>
+                <div class="notes-feature-card">
+                    <span class="notes-feature-icon">🆓</span>
+                    <h3>Free</h3>
+                    <p>No subscriptions, no paywalls. Use every feature without paying a cent.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <a href="/cloud/" class="product-card" data-planet="cloud">
-                    <img src="/images/cloud-text-logo.png" alt="Boojy Cloud" class="product-card-logo">
-                    <p class="product-card-description">Sync your notes across all your devices. Free up to 500 MB. Your data stays yours.</p>
-                    <span class="product-card-link">Learn more →</span>
-                </a>
+    <!-- Cloud Upsell Section -->
+    <section class="notes-cloud-section">
+        <div class="container">
+            <div class="notes-cloud-box">
+                <h2>Sync with Boojy Cloud</h2>
+                <p>Keep your notes on all your devices. Free up to 500 MB.</p>
+                <a href="/cloud/" class="btn btn-secondary">Learn about Cloud →</a>
             </div>
         </div>
     </section>

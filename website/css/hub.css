@@ -1,0 +1,204 @@
+/* ===================================
+   BOOJY HUB - Homepage Styles
+   =================================== */
+
+/* === Hub Hero === */
+.hub-hero {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: var(--spacing-lg);
+    background: var(--color-bg-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Starfield effect */
+.hub-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 25% 35%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(2px 2px at 40% 15%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 55% 45%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 70% 25%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(2px 2px at 85% 40%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 15% 60%, rgba(255,255,255,0.35) 0%, transparent 100%),
+        radial-gradient(1px 1px at 30% 75%, rgba(255,255,255,0.45) 0%, transparent 100%),
+        radial-gradient(2px 2px at 50% 55%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 65% 70%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 80% 65%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 95% 30%, rgba(255,255,255,0.35) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Nebula glow */
+.hub-hero::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse at center,
+        rgba(56, 189, 248, 0.08) 0%,
+        rgba(139, 92, 246, 0.05) 40%,
+        transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(60px);
+}
+
+.hub-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hub-logo {
+    width: 80px;
+    height: auto;
+    margin: 0 auto var(--spacing-md);
+    display: block;
+}
+
+.hub-brand {
+    height: 2.5rem;
+    width: auto;
+    display: block;
+    margin: 0 auto var(--spacing-md);
+}
+
+.hub-tagline {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    font-weight: 400;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* === Product Cards === */
+.product-cards-section {
+    background: var(--color-bg);
+    padding: var(--spacing-xl) 0 var(--spacing-3xl);
+}
+
+.product-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background: rgba(51, 51, 51, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Colored top accent bar — always visible */
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--planet-color, var(--color-accent));
+    opacity: 1;
+    transition: height 0.3s ease;
+}
+
+.product-card:hover::before {
+    height: 4px;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--planet-color, var(--color-accent));
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3), 0 0 20px var(--planet-glow, rgba(56, 189, 248, 0.15));
+}
+
+/* Audio — blue */
+.product-card[data-planet="audio"] {
+    --planet-color: #38BDF8;
+    --planet-glow: rgba(56, 189, 248, 0.2);
+    border-color: rgba(56, 189, 248, 0.15);
+}
+
+/* Notes — light grey */
+.product-card[data-planet="notes"] {
+    --planet-color: #B0B1B6;
+    --planet-glow: rgba(176, 177, 182, 0.2);
+    border-color: rgba(176, 177, 182, 0.15);
+}
+
+/* Cloud — light pink */
+.product-card[data-planet="cloud"] {
+    --planet-color: #F9A8D4;
+    --planet-glow: rgba(249, 168, 212, 0.2);
+    border-color: rgba(249, 168, 212, 0.15);
+}
+
+.product-card-logo {
+    height: 1.75rem;
+    width: auto;
+    display: block;
+    margin-bottom: var(--spacing-md);
+}
+
+.product-card-description {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.product-card-link {
+    color: var(--planet-color, var(--color-accent));
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.product-card:hover .product-card-link {
+    color: var(--color-primary);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .hub-hero {
+        min-height: 40vh;
+        padding-top: 80px;
+    }
+
+    .product-cards {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        gap: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .hub-tagline {
+        font-size: 1.1rem;
+    }
+}
