@@ -10,6 +10,8 @@
     <title>Boojy Cloud – Sync Your Creative Work</title>
     <link rel="stylesheet" href="/css/shared.css">
     <link rel="stylesheet" href="/css/cloud.css">
+    <!-- Supabase Auth -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
     <!-- Umami Analytics -->
     <script defer src="https://umami-production-fc39.up.railway.app/script.js" data-website-id="863178bf-14fc-4b35-b45a-5e4ff4240862"></script>
 </head>
@@ -85,7 +87,7 @@
                         <li><span class="check">✓</span> Everything in Free</li>
                         <li><span class="check">✓</span> Priority support</li>
                     </ul>
-                    <a href="/account/" class="btn btn-primary pricing-btn">Upgrade</a>
+                    <button id="btn-upgrade" class="btn btn-primary pricing-btn">Upgrade</button>
                 </div>
             </div>
         </div>
@@ -208,5 +210,43 @@
     </footer>
 
     <script src="/js/shared.js"></script>
+    <script>
+        const SUPABASE_URL = 'https://wupmcvhzstgsdrvcigtm.supabase.co';
+        const SUPABASE_ANON_KEY = 'sb_publishable_xB7iiTJKkKeC_8ZkuRdFBw_FKuIHbR0';
+        const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        document.getElementById('btn-upgrade').addEventListener('click', async () => {
+            const { data: { session } } = await sb.auth.getSession();
+
+            if (!session) {
+                // Not logged in — send to account page first
+                window.location.href = '/account/';
+                return;
+            }
+
+            const btn = document.getElementById('btn-upgrade');
+            btn.textContent = 'Loading...';
+            btn.disabled = true;
+
+            const res = await fetch(SUPABASE_URL + '/functions/v1/create-checkout', {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Bearer ' + session.access_token,
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ country: 'US' }), // Cloudflare will provide real country in production
+            });
+
+            const data = await res.json();
+
+            if (data.url) {
+                window.location.href = data.url;
+            } else {
+                btn.textContent = 'Upgrade';
+                btn.disabled = false;
+                alert('Something went wrong. Please try again.');
+            }
+        });
+    </script>
 </body>
 </html>
