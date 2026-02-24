@@ -239,7 +239,7 @@ if (dashManage) {
         try {
             const { data: { session } } = await sb.auth.getSession();
             if (!session) return;
-            window.location.href = 'https://billing.stripe.com/p/login/test_00g00000000000';
+            window.location.href = 'https://billing.stripe.com/p/login/4gMbJ31tz6cB0IbaOvbZe00';
         } catch (err) {
             console.error('Manage subscription error:', err);
         }
