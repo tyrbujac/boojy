@@ -1,8 +1,16 @@
-# Boojy - Tech Stack
+# Boojy — Tech Stack
 
-## Overview
+Solo project built by Tyr. Last updated: Feb 2026.
 
-Solo project built by Tyr.
+---
+
+## Repos
+
+| Repo | Purpose | URL |
+|------|---------|-----|
+| `boojy` | Marketing website (boojy.org) | github.com/boojyorg/boojy |
+| `boojy-notes` | Notes web app (notes.boojy.org) | github.com/boojyorg/boojy-notes |
+| `boojy-cloud` | Backend: Supabase migrations + Edge Functions | github.com/boojyorg/boojy-cloud |
 
 ---
 
@@ -11,11 +19,76 @@ Solo project built by Tyr.
 | Component | Service |
 |-----------|---------|
 | Domain | Namecheap |
-| Hosting | Netlify |
-| Forms | Netlify Forms |
-| Framework | Plain JavaScript |
-| Version Control | GitHub |
-| CI/CD | Netlify (auto-deploys from GitHub) |
+| DNS + CDN | Cloudflare |
+| Hosting | Cloudflare Pages (auto-deploys from GitHub) |
+| Framework | Plain HTML/CSS/JS |
+| Auth | Supabase JS (CDN v2.43.4) |
+
+---
+
+## Boojy Notes (notes.boojy.org)
+
+| Component | Service |
+|-----------|---------|
+| Hosting | Cloudflare Pages (auto-deploys from GitHub) |
+| Framework | React 19 + Vite |
+| Auth | Supabase Auth (Email, Google, Apple) |
+| Sync | Supabase Edge Functions → Cloudflare R2 |
+
+---
+
+## Backend (Supabase)
+
+| Component | Service |
+|-----------|---------|
+| Auth | Supabase Auth (Email, Google, Apple OAuth) |
+| Database | Supabase PostgreSQL |
+| Edge Functions | Deno runtime on Supabase |
+| Object Storage | Cloudflare R2 (S3-compatible) |
+
+### Edge Functions
+
+| Function | Purpose |
+|----------|---------|
+| `create-checkout` | Creates Stripe Checkout session with PPP pricing |
+| `stripe-webhook` | Handles Stripe events (checkout, cancel, update) |
+| `sync-push` | Push note content to R2 + metadata to Postgres |
+| `sync-pull` | Pull notes from R2 (incremental by timestamp) |
+| `sync-delete` | Soft-delete notes from R2 + metadata |
+| `storage-check` | Check if user has storage space before upload |
+| `auth-webhook` | Post-signup hook |
+| `sync` | Legacy general sync endpoint |
+
+### Database Tables
+
+| Table | Purpose |
+|-------|---------|
+| `profiles` | User tier, Stripe IDs, storage limit |
+| `storage_usage` | Bytes used, file count per user |
+| `notes_metadata` | Note metadata (title, hash, R2 key, timestamps) |
+
+---
+
+## Payments (Stripe)
+
+| Component | Detail |
+|-----------|--------|
+| Product | Boojy Cloud Orbit |
+| Pricing | 4 PPP tiers: $5 / $3.50 / $2 / $1 per month |
+| Checkout | Stripe Checkout (hosted) |
+| Portal | Stripe Customer Portal (manage/cancel) |
+| Webhooks | → Supabase Edge Function `stripe-webhook` |
+| Tax | Stripe Tax (automatic, requires billing address) |
+
+---
+
+## Boojy Audio
+
+| Component | Technology |
+|-----------|------------|
+| Framework | Flutter |
+| Platforms | macOS, Windows |
+| Downloads | GitHub Releases |
 
 ---
 
@@ -23,116 +96,19 @@ Solo project built by Tyr.
 
 | Component | Service |
 |-----------|---------|
-| Website Analytics | Umami (self-hosted) |
-| Umami Hosting | Railway.com |
-| Umami Database | Railway PostgreSQL |
+| Website Analytics | Umami (self-hosted on Railway) |
 | App Crash Reports | Sentry.io (opt-in) |
 
 ---
 
-## Email & Communication
-
-| Component | Service |
-|-----------|---------|
-| Newsletter Signup | Mailchimp |
-| Contact Email | tyr@boojy.org |
-
----
-
-## Boojy Audio App
-
-| Component | Technology |
-|-----------|------------|
-| Framework | Flutter |
-| Platforms (Current) | macOS, Windows |
-| Platforms (Future) | iPad, Linux, Web |
-| Download Hosting | GitHub Releases (recommended) |
-
----
-
-## Data & Privacy
-
-| Data Type | Storage |
-|-----------|---------|
-| User projects | Local only (user's computer) |
-| Newsletter emails | Mailchimp |
-| Form submissions | Netlify Forms |
-| Crash reports | Sentry.io |
-| Analytics | Umami (Railway) |
-
----
-
-## Architecture Diagram
-
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                              USERS                                      │
-└─────────────────────────────────────────────────────────────────────────┘
-                                    │
-                ┌───────────────────┼───────────────────┐
-                │                   │                   │
-                ▼                   ▼                   ▼
-┌───────────────────────┐ ┌─────────────────┐ ┌─────────────────────────┐
-│      boojy.org        │ │  Boojy Audio    │ │     tyr@boojy.org       │
-│      (Website)        │ │     (App)       │ │       (Email)           │
-│                       │ │                 │ │                         │
-│  Hosting: Netlify     │ │ Framework:      │ │  Contact &              │
-│  Forms: Netlify       │ │ Flutter         │ │  Support                │
-│  JS: Plain            │ │                 │ │                         │
-└───────────────────────┘ └─────────────────┘ └─────────────────────────┘
-          │                       │
-          │                       │
-          ▼                       ▼
-┌───────────────────────┐ ┌─────────────────┐
-│       Umami           │ │    Sentry.io    │
-│    (Analytics)        │ │ (Crash Reports) │
-│                       │ │                 │
-│  Hosting: Railway     │ │  Opt-in only    │
-│  DB: Railway Postgres │ │                 │
-└───────────────────────┘ └─────────────────┘
-          
-┌───────────────────────┐ ┌─────────────────┐
-│      Mailchimp        │ │ GitHub Releases │
-│    (Newsletter)       │ │  (Downloads)    │
-│                       │ │                 │
-│  Email signups        │ │  .dmg, .exe     │
-│  Unsubscribe links    │ │  Versioned      │
-└───────────────────────┘ └─────────────────┘
-```
-
----
-
-## Costs
+## Costs (Approximate)
 
 | Service | Cost |
 |---------|------|
 | Namecheap (domain) | ~£10/year |
-| Netlify | Free tier |
-| Railway (Umami) | Free tier / ~$5/month |
-| Sentry.io | Free tier |
-| Mailchimp | Free tier (up to 500 contacts) |
-| GitHub | Free |
-| **Total** | ~£10/year + ~$0-5/month |
-
----
-
-## Free Tier Limits
-
-| Service | Free Limit |
-|---------|------------|
-| Netlify | 100GB bandwidth/month, 300 build mins |
-| Railway | $5 credit/month |
-| Sentry | 5K errors/month |
-| Mailchimp | 500 contacts, 1K emails/month |
-| GitHub Releases | 2GB per file |
-
----
-
-## Future Considerations
-
-| When | Consider |
-|------|----------|
-| 500+ newsletter subscribers | Upgrade Mailchimp or switch to Buttondown |
-| High traffic | Add Cloudflare CDN (free) |
-| Many crash reports | Upgrade Sentry |
-| Large downloads | Consider Cloudflare R2 |
+| Cloudflare Pages | Free |
+| Supabase | Free tier |
+| Stripe | 2.9% + 30¢ per transaction |
+| Cloudflare R2 | Free tier (10 GB storage, 10M reads/month) |
+| Railway (Umami) | ~$5/month |
+| Sentry | Free tier |
