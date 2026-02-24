@@ -39,7 +39,7 @@
     z-index: 0;
 }
 
-/* Nebula glow — purple/indigo for Cloud */
+/* Nebula glow — teal for Cloud */
 .cloud-hero::after {
     content: '';
     position: absolute;
@@ -49,8 +49,8 @@
     width: 600px;
     height: 400px;
     background: radial-gradient(ellipse at center,
-        rgba(165, 180, 252, 0.1) 0%,
-        rgba(139, 92, 246, 0.05) 40%,
+        rgba(164, 202, 206, 0.1) 0%,
+        rgba(164, 202, 206, 0.04) 40%,
         transparent 70%);
     pointer-events: none;
     z-index: 0;
@@ -109,12 +109,12 @@
 }
 
 .pricing-card-highlight {
-    border-color: rgba(165, 180, 252, 0.3);
+    border-color: rgba(164, 202, 206, 0.3);
 }
 
 .pricing-card-highlight:hover {
-    border-color: rgba(165, 180, 252, 0.5);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(165, 180, 252, 0.1);
+    border-color: rgba(164, 202, 206, 0.5);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(164, 202, 206, 0.1);
 }
 
 .pricing-name {
@@ -271,70 +271,6 @@
     color: var(--color-text-light);
     font-size: 0.95rem;
     line-height: 1.6;
-}
-
-/* === Sign Up Section === */
-.cloud-signup-section {
-    background: var(--color-bg-dark);
-    padding: var(--spacing-3xl) 0;
-}
-
-.cloud-signup-box {
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.cloud-signup-box h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    margin-bottom: var(--spacing-xl);
-}
-
-.auth-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-}
-
-.auth-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-sm);
-    width: 100%;
-    padding: 0.85rem var(--spacing-md);
-    border-radius: var(--border-radius);
-    font-size: 1rem;
-    font-weight: 600;
-    font-family: var(--font-sans);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 1px solid var(--color-border);
-    background: rgba(51, 51, 51, 0.6);
-    color: var(--color-text);
-}
-
-.auth-btn:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
-.auth-btn:not(:disabled):hover {
-    border-color: var(--color-accent);
-    transform: translateY(-1px);
-}
-
-.auth-btn svg {
-    flex-shrink: 0;
-}
-
-.auth-note {
-    margin-top: var(--spacing-md);
-    color: var(--color-text-light);
-    font-size: 0.85rem;
-    opacity: 0.7;
 }
 
 /* === Responsive === */

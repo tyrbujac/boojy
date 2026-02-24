@@ -95,9 +95,9 @@
 
 .product-cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-xl);
-    max-width: 900px;
+    max-width: 650px;
     margin: 0 auto;
 }
 
@@ -139,23 +139,16 @@
 
 /* Audio — blue */
 .product-card[data-planet="audio"] {
-    --planet-color: #38BDF8;
-    --planet-glow: rgba(56, 189, 248, 0.2);
-    border-color: rgba(56, 189, 248, 0.15);
+    --planet-color: #4A9EF5;
+    --planet-glow: rgba(74, 158, 245, 0.2);
+    border-color: rgba(74, 158, 245, 0.15);
 }
 
-/* Notes — light grey */
+/* Notes — teal */
 .product-card[data-planet="notes"] {
-    --planet-color: #B0B1B6;
-    --planet-glow: rgba(176, 177, 182, 0.2);
-    border-color: rgba(176, 177, 182, 0.15);
-}
-
-/* Cloud — light pink */
-.product-card[data-planet="cloud"] {
-    --planet-color: #F9A8D4;
-    --planet-glow: rgba(249, 168, 212, 0.2);
-    border-color: rgba(249, 168, 212, 0.15);
+    --planet-color: #A4CACE;
+    --planet-glow: rgba(164, 202, 206, 0.2);
+    border-color: rgba(164, 202, 206, 0.15);
 }
 
 .product-card-logo {
@@ -180,6 +173,54 @@
 }
 
 .product-card:hover .product-card-link {
+    color: var(--color-primary);
+}
+
+/* === Cloud Promo === */
+.cloud-promo-section {
+    background: var(--color-bg);
+    padding: 0 0 var(--spacing-3xl);
+}
+
+.cloud-promo {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: var(--spacing-2xl);
+    background: rgba(51, 51, 51, 0.4);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cloud-promo-icon {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: var(--spacing-sm);
+}
+
+.cloud-promo h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.cloud-promo p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+}
+
+.cloud-promo-link {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.cloud-promo-link:hover {
     color: var(--color-primary);
 }
 

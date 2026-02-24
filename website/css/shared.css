@@ -162,6 +162,23 @@ body {
     gap: var(--spacing-md);
 }
 
+.nav-github {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-light);
+    transition: color 0.3s ease;
+}
+
+.nav-github svg {
+    width: 20px;
+    height: 20px;
+}
+
+.nav-github:hover {
+    color: var(--color-text);
+}
+
 .nav-signin {
     text-decoration: none;
     font-weight: 500;
@@ -437,6 +454,26 @@ section {
     margin: var(--spacing-md) 0 0 0;
 }
 
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.footer-nav a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--color-accent);
+}
+
 .footer-link {
     color: var(--color-text-light);
     text-decoration: none;
@@ -490,6 +527,10 @@ section {
     }
 
     .nav-signin {
+        display: none;
+    }
+
+    .nav-github {
         display: none;
     }
 

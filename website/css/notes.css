@@ -41,7 +41,7 @@
     z-index: 0;
 }
 
-/* Nebula glow — cyan/blue for Notes */
+/* Nebula glow — teal for Notes */
 .notes-hero::after {
     content: '';
     position: absolute;
@@ -51,8 +51,8 @@
     width: 600px;
     height: 400px;
     background: radial-gradient(ellipse at center,
-        rgba(56, 189, 248, 0.1) 0%,
-        rgba(56, 189, 248, 0.04) 40%,
+        rgba(164, 202, 206, 0.1) 0%,
+        rgba(164, 202, 206, 0.04) 40%,
         transparent 70%);
     pointer-events: none;
     z-index: 0;
@@ -139,7 +139,7 @@
 
 .notes-feature-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(56, 189, 248, 0.3);
+    border-color: rgba(164, 202, 206, 0.3);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
