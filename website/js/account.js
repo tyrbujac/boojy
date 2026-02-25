@@ -115,7 +115,10 @@ if (btnEmail) {
 function handleToggle(e) {
     e.preventDefault();
     isSignUp = !isSignUp;
-    if (emailSubmit) emailSubmit.textContent = isSignUp ? 'Create Account' : 'Sign In';
+    if (emailSubmit) {
+        emailSubmit.textContent = isSignUp ? 'Create Account' : 'Sign In';
+        emailSubmit.disabled = false;
+    }
     if (nameInput) nameInput.style.display = isSignUp ? 'block' : 'none';
     if (emailToggle) {
         emailToggle.innerHTML = isSignUp
