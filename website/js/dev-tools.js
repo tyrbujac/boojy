@@ -12,9 +12,11 @@
     accent: "#F5A623",
     bg: "#13151C",
     bgCard: "#2C2C32",
-    glowOpacity: 80,
+    cloudCard: "#2C2C32",
+    cloudCta: "#D9D9D9",
+    glowOpacity: 75,
     glowSize: 1200,
-    glowColor: [176, 181, 255],
+    glowColor: [203, 204, 255],
   };
 
   const PRESETS = {
@@ -164,6 +166,13 @@
         const hb = Math.min(255, b + 20);
         setVar("--color-accent-hover", rgbToHex(hr, hg, hb));
       }
+      // Also update hover variant for cloud CTA
+      if (cssVar === "--color-cloud-cta") {
+        const hr = Math.min(255, r + 20);
+        const hg = Math.min(255, g + 20);
+        const hb = Math.min(255, b + 20);
+        setVar("--color-cloud-cta-hover", rgbToHex(hr, hg, hb));
+      }
     }
 
     function makeSlider(channel, value, cls) {
@@ -220,6 +229,17 @@
   panel.appendChild(accentGroup);
   panel.appendChild(bgGroup);
   panel.appendChild(cardGroup);
+
+  // --- Cloud Card section ---
+  const cloudSection = document.createElement("div");
+  cloudSection.className = "dt-section";
+  cloudSection.textContent = "Cloud Card";
+  panel.appendChild(cloudSection);
+
+  const cloudCardGroup = buildRgbGroup("Card Background", "--color-cloud-card", DEFAULTS.cloudCard);
+  const cloudCtaGroup = buildRgbGroup("Button", "--color-cloud-cta", DEFAULTS.cloudCta);
+  panel.appendChild(cloudCardGroup);
+  panel.appendChild(cloudCtaGroup);
 
   // --- Hero Glow section ---
   const glowEl = document.querySelector(".hub-hero-glow");
@@ -376,6 +396,8 @@
     accentGroup._setHex(DEFAULTS.accent);
     bgGroup._setHex(DEFAULTS.bg);
     cardGroup._setHex(DEFAULTS.bgCard);
+    cloudCardGroup._setHex(DEFAULTS.cloudCard);
+    cloudCtaGroup._setHex(DEFAULTS.cloudCta);
     if (typeof resetGlow === "function") resetGlow();
     showToast("Reset to defaults");
   });

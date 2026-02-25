@@ -38,15 +38,15 @@
 }
 
 .hub-hero-glow {
-    --glow-opacity: 0.8;
+    --glow-opacity: 0.75;
     --glow-width: 1200px;
     --glow-height: 852px;
-    --glow-color: 176, 181, 255;
+    --glow-color: 203, 204, 255;
 
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, calc(-50% + 10px));
+    transform: translate(-50%, calc(-50% + 18px));
     width: var(--glow-width);
     height: var(--glow-height);
     filter: blur(80px);
@@ -214,19 +214,44 @@
 .cloud-card {
     max-width: 800px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--color-cloud-card, var(--color-bg-card));
     border: 1px solid var(--color-border);
-    border-top: 2px solid var(--color-notes);
     border-radius: var(--border-radius-lg);
-    padding: var(--spacing-2xl) var(--spacing-xl);
+    padding: 2.5rem 3rem;
     text-align: center;
+    transition: all 0.35s ease;
 }
 
-.cloud-logo {
-    height: 2.5rem;
+.cloud-card:hover {
+    border-color: rgba(255, 255, 255, 0.85);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(255, 255, 255, 0.06);
+}
+
+.cloud-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: calc(0.5rem + 11px);
+    margin: -1px 0 0;
+    padding-left: 9px;
+    position: relative;
+    top: -2px;
+}
+
+.cloud-heading-boojy {
+    height: 2.945rem;
     width: auto;
-    display: inline-block;
-    margin-bottom: var(--spacing-md);
+    position: relative;
+    top: 3px;
+}
+
+.cloud-heading-cloud {
+    height: 2.1rem;
+    width: auto;
+    position: relative;
+    top: -2px;
 }
 
 .cloud-description {
@@ -240,10 +265,10 @@
 .cloud-cta {
     display: inline-block;
     padding: 0.6rem 2rem;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: var(--color-cloud-cta, rgba(255, 255, 255, 0.85));
+    border: none;
     border-radius: var(--border-radius);
-    color: var(--color-text);
+    color: #0F1119;
     font-weight: 600;
     font-size: 0.9rem;
     text-decoration: none;
@@ -251,8 +276,26 @@
 }
 
 .cloud-cta:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.4);
+    background: var(--color-cloud-cta-hover, rgba(255, 255, 255, 0.95));
+}
+
+.cloud-devices {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px 0 22px;
+}
+
+.cloud-devices .device-icon {
+    width: 32px;
+    height: 32px;
+    color: #B0B3C1;
+}
+
+.cloud-devices .sync-arrow {
+    color: #8A8D9B;
+    font-size: 16px;
 }
 
 /* === Responsive === */
@@ -305,6 +348,6 @@
     }
 
     .cloud-card {
-        padding: var(--spacing-xl) var(--spacing-lg);
+        padding: 1.5rem;
     }
 }
