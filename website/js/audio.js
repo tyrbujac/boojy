@@ -344,4 +344,4 @@ if (heroSection) {
 // ===================================
 console.log('%c🎵 Boojy Audio 🎵', 'color: #38BDF8; font-size: 24px; font-weight: bold;');
 console.log('%cMusic production without the barriers.', 'color: #5CCBFA; font-size: 16px;');
-console.log('%cContribute: https://github.com/boojyorg/boojy', 'color: #6B7280; font-size: 12px;');
+console.log('%cContribute: https://github.com/boojyorg', 'color: #6B7280; font-size: 12px;');
